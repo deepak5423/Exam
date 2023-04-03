@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'main/header.html.twig' %}
+    <table class='bordert'>
+        <tr style='font-size:40px;padding:20px;'>
+            <th style='padding:20px;'> Slot number </th>
+            <th style='padding:20px;'> Vehicle number </th>
+            <th style='padding:20px;'> Time of entry </th>
+            <th style='padding:20px;'> Time of exit </th>
+            <th style='padding:20px;'> Status </th>
+        </tr>
+        
+            {% for parkingDetail in parkingDetails %}
+            <tr>
+                <td style="padding:20px;">{{parkingDetail.slotNumber}}</td>
+                <td style="padding:20px;">{{parkingDetail.vehicleNumber}}</td>
+                <td style="padding:20px;">{{parkingDetail.timeOfEntry}}</td>
+                {% if parkingDetail.timeOfExit %}
+                    <td style="padding:20px;">{{parkingDetail.timeOfExit}}</td>
+                {% else %}
+                    <td style="padding:20px;">Null</td>
+                {% endif %}
+                <td style="padding:20px;">{{parkingDetail.status}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

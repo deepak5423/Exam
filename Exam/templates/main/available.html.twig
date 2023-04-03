@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'main/header.html.twig' %}
+    <section>
+        <div class='container'>
+            <table class='bordert'>
+                <tr style='font-size:40px;padding:20px;'>
+                    <th style='padding:20px;'> Vehicle Type </th>
+                    <th style='padding:20px;'> 2-wheeler </th>
+                    <th style='padding:20px;'> 4-wheeler </th>
+                </tr>
+                <tr>
+                    <td style="padding:20px;"><h3>Available Slots</h3></td>
+                    <td style="padding:20px;">{{100 - twoWheeler}}</td>
+                    <td style="padding:20px;">{{100 - fourWheeler}}</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+{% endblock %}
